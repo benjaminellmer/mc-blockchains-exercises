@@ -1,0 +1,18 @@
+### Get Chain
+GET http://localhost:8080/chain
+
+### Mine
+GET http://localhost:8080/mine?user=benjaminellmer
+
+### Create transaction
+POST http://localhost:8080/transaction
+Content-Type: application/json
+
+{
+  "sender": "benjaminellmer",
+  "receiver": "benekaiser",
+  "amount": 5
+}
+
+### Get Balance
+GET http://localhost:8080/balance?user=benekaiser
