@@ -1,11 +1,11 @@
 ### Get Chain
-GET http://localhost:8080/chain
+GET http://localhost:1010/chain
 
 ### Mine
-GET http://localhost:8080/mine?user=benjaminellmer
+GET http://localhost:1010/mine?user=benjaminellmer
 
 ### Create transaction
-POST http://localhost:8080/transaction
+POST http://localhost:1010/transaction
 Content-Type: application/json
 
 {
@@ -15,4 +15,16 @@ Content-Type: application/json
 }
 
 ### Get Balance
-GET http://localhost:8080/balance?user=benekaiser
+GET http://localhost:1010/balance?user=benekaiser
+
+### Get Balance
+GET http://localhost:1010/balance?user=benjaminellmer
+
+### Register
+GET http://localhost:1010/nodes/register?nodeUrl=http://localhost:2020
+
+### Resolve
+GET http://localhost:1010/nodes/resolve
+
+### Mine
+GET http://localhost:2020/mine?user=benjaminellmer

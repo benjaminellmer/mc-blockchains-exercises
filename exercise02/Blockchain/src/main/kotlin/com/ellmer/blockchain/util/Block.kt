@@ -4,7 +4,7 @@ import com.ellmer.blockchain.extensions.numberOfLeadingZeros
 import com.ellmer.blockchain.extensions.sha256
 
 class Block(
-    val index: Long,
+    val index: Int,
     val timestamp: Long,
     val transactions: List<Transaction>,
     val previousHash: String,

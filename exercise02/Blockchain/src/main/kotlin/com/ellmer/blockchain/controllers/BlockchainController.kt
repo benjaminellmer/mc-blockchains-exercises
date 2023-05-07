@@ -18,7 +18,7 @@ class BlockchainController(
     @PostMapping("transaction")
     fun newTransaction(@RequestBody transaction: Transaction, httpServletRequest: HttpServletRequest): ResponseEntity<String> {
         val valid = blockChain.addTransaction(transaction)
-        if(!valid) {
+        if (!valid) {
             return ResponseEntity.badRequest().build()
         }
 
@@ -52,7 +52,7 @@ class BlockchainController(
     @GetMapping("mine")
     fun mine(@RequestParam user: String?): ResponseEntity<Block> {
         blockChain.createNewBlock(user)
-        return ResponseEntity.ok(blockChain.chain.last)
+        return ResponseEntity.ok(blockChain.chain.last())
     }
 
     @GetMapping("balance")
