@@ -1,0 +1,96 @@
+\documentclass[14pt,a4paper]{extarticle}
+\usepackage{graphicx}
+\usepackage{caption} 
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{pdfpages}
+\usepackage{libertine}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fullpage}
+\usepackage{ulem}
+\usepackage{cancel}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\colorlet{punct}{red!60!black}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    pdfborder={0 0 0},
+    linktocpage      
+}
+
+\begin{document}
+	\begin{titlepage}
+		\centering
+		{\scshape\LARGE Blockchains \par}
+		\vspace{2.5cm}
+		{\huge\bfseries ERC20 Token Creation}
+		\vfill
+		{\normalsize von\par}
+		{\normalsize Benjamin Ellmer (\textsc{S2210455012}) \par}
+		\vspace{1cm}
+		\includegraphics[width=0.3\textheight]{images/logo.pdf} \par
+		\vspace{1cm}
+		{\large Mobile Computing Master \par}
+		{\large FH Hagenberg \par}
+		\vfill
+		{\large \today\par}
+	\end{titlepage}
+
+	\section{Code}
+	All I had to do was change the first line of the contract from the slides, to:
+	\begin{lstlisting}
+contract Ex3Token is IERC20 { 
+using SafeMath for Ex3Token;
+	...
+}
+	\end{lstlisting}
+	
+	\vspace{1cm}
+
+	\noindent You can find the whole code for the contract in the submission folder, or on my git repo \href{https://github.com/benjaminellmer/mc-blockchains-exercises/blob/main/exercise03/contracts/Ex3Token.sol}{here}.
+
+	\section{Process}
+	\noindent{\textbf{Create Metamask Account}} \\ \\
+	\noindent{\textbf{Activate Test Networks}} \\ \\
+	\includegraphics[width=\textwidth]{images/show_test_networks.png}
+	\noindent{\textbf{View empty wallet}} \\ \\
+	\includegraphics[width=\textwidth]{images/metamask_empty.png}
+	\noindent{\textbf{Mine tokens \& Claim Rewards}} \\ \\
+	\includegraphics[width=0.5\textwidth]{images/faucet.png}
+	\includegraphics[width=0.5\textwidth]{images/mining.png}
+	\newpage
+	\noindent{\textbf{Check Rewards Transaction}} \\ \\
+	\includegraphics[width=\textwidth]{images/rewards.png}
+	\includegraphics[width=\textwidth]{images/rewards_tx.png}
+	\newpage
+	\noindent{\textbf{View tokens in Metamask}} \\ \\
+	\includegraphics[width=0.5\textwidth]{images/metamask.png} \\ \\
+	\noindent{\textbf{Select Metamask wallet in Remix and deploy token}} \\ \\
+	\includegraphics[width=0.5\textwidth]{images/deploy.png}
+	\newpage
+	\noindent{\textbf{Inspect deployment Transaction}} \\ \\
+	\includegraphics[width=\textwidth]{images/deploy_tx.png} \\ \\
+	\includegraphics[width=\textwidth]{images/contract_tx.png} \\ \\
+	\includegraphics[width=\textwidth]{images/token.png} \\ 
+	\newpage
+	\noindent{\textbf{After some time, the ERC-20 Tokens transferred line in etherscan appeared}} \\ \\
+	\includegraphics[width=\textwidth]{images/deploy_tx_after_wait.png} \\ 
+	\newpage
+	\noindent{\textbf{Add token to metamask and be a millionair}} \\ \\
+	\includegraphics[width=0.5\textwidth]{images/metamask_add_token.png} 
+	\includegraphics[width=0.5\textwidth]{images/metamask_millionair.png}
+
+
+\end{document}
